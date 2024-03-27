@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int isTrendyNumber(int number) {
+    char numStr[4];
+    sprintf(numStr, "%d", number);
+    
+    
+    if (numStr[0] == '\0' || numStr[1] == '\0' || numStr[2] == '\0') {
+        return 0;
+    }
+    
+    
+    int middleDigit = numStr[1] - '0';
+    if (middleDigit % 3 == 0) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int main() {
+    int number;
+    scanf("%d", &number);
+    
+    if (isTrendyNumber(number)) {
+        printf("Trendy Number\n");
+    } else {
+        printf("Not a Trendy Number\n");
+    }
+    
+    return 0;
+}
